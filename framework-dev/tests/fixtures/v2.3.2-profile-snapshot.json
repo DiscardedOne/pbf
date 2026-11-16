@@ -1,0 +1,258 @@
+{
+  "manifest_docs": {
+    "D0.01": {
+      "depends_on": "-",
+      "profile_tier": "lite"
+    },
+    "D0.02": {
+      "depends_on": "D0.01",
+      "profile_tier": "lite"
+    },
+    "D1.01": {
+      "depends_on": "D0.01",
+      "profile_tier": "standard"
+    },
+    "D1.02": {
+      "depends_on": "D1.01",
+      "profile_tier": "standard"
+    },
+    "D1.03": {
+      "depends_on": "D0.01",
+      "profile_tier": "lite"
+    },
+    "D1.04": {
+      "depends_on": "D0.01",
+      "profile_tier": "lite"
+    },
+    "D1.05": {
+      "depends_on": "D1.01, D1.02",
+      "profile_tier": "standard"
+    },
+    "D1.06": {
+      "depends_on": "D1.03, D1.04",
+      "profile_tier": "standard"
+    },
+    "D1.07": {
+      "depends_on": "D1.02, D1.04",
+      "profile_tier": "standard"
+    },
+    "D2.01": {
+      "depends_on": "D1.02, D1.03",
+      "profile_tier": "exhaustive"
+    },
+    "D2.02": {
+      "depends_on": "D1.03, D1.04",
+      "profile_tier": "lite"
+    },
+    "D2.03": {
+      "depends_on": "D2.02",
+      "profile_tier": "lite"
+    },
+    "D2.04": {
+      "depends_on": "D2.02, D2.03",
+      "profile_tier": "lite"
+    },
+    "D2.05": {
+      "depends_on": "D1.03, D1.04, D2.03",
+      "profile_tier": "lite"
+    },
+    "D2.06": {
+      "depends_on": "D2.02",
+      "profile_tier": "standard"
+    },
+    "D2.07": {
+      "depends_on": "D2.03, D2.04",
+      "profile_tier": "standard"
+    },
+    "D3.01": {
+      "depends_on": "D2.03, D2.04",
+      "profile_tier": "lite"
+    },
+    "D3.02": {
+      "depends_on": "D3.01",
+      "profile_tier": "exhaustive"
+    },
+    "D3.03": {
+      "depends_on": "D2.04, D3.01",
+      "profile_tier": "standard"
+    },
+    "D3.04": {
+      "depends_on": "D3.01, D3.03",
+      "profile_tier": "exhaustive"
+    },
+    "D4.01": {
+      "depends_on": "D2.04, D2.05, D3.01",
+      "profile_tier": "lite"
+    },
+    "D4.02": {
+      "depends_on": "D4.01",
+      "profile_tier": "standard"
+    },
+    "D4.03": {
+      "depends_on": "D4.01",
+      "profile_tier": "lite"
+    },
+    "D4.04": {
+      "depends_on": "D4.01, D4.03",
+      "profile_tier": "lite"
+    },
+    "D4.05": {
+      "depends_on": "D4.03",
+      "profile_tier": "standard"
+    },
+    "D4.06": {
+      "depends_on": "D4.03, D4.04",
+      "profile_tier": "standard"
+    },
+    "D4.07": {
+      "depends_on": "D3.03, D4.03",
+      "profile_tier": "standard"
+    },
+    "D4.08": {
+      "depends_on": "D4.03, D4.05, D4.06",
+      "profile_tier": "exhaustive"
+    },
+    "D4.09": {
+      "depends_on": "D4.04",
+      "profile_tier": "standard"
+    },
+    "D4.10": {
+      "depends_on": "D4.03, D4.05",
+      "profile_tier": "exhaustive"
+    },
+    "D5.01": {
+      "depends_on": "D3.01, D4.07",
+      "profile_tier": "standard"
+    },
+    "D5.02": {
+      "depends_on": "D3.03, D4.07, D5.01",
+      "profile_tier": "standard"
+    },
+    "D5.03": {
+      "depends_on": "D4.03",
+      "profile_tier": "standard"
+    },
+    "D5.04": {
+      "depends_on": "D2.03, D4.03",
+      "profile_tier": "standard"
+    },
+    "D5.05": {
+      "depends_on": "D2.06, D4.03",
+      "profile_tier": "exhaustive"
+    },
+    "D5.06": {
+      "depends_on": "D2.07, D3.01",
+      "profile_tier": "exhaustive"
+    },
+    "D5.07": {
+      "depends_on": "D4.08, D5.04",
+      "profile_tier": "exhaustive"
+    },
+    "D5.08": {
+      "depends_on": "D3.04, D4.07",
+      "profile_tier": "exhaustive"
+    },
+    "D5.09": {
+      "depends_on": "D4.05, D4.06, D4.08",
+      "profile_tier": "exhaustive"
+    },
+    "D5.10": {
+      "depends_on": "D4.10",
+      "profile_tier": "exhaustive"
+    },
+    "D6.01": {
+      "depends_on": "D2.04, D2.05, D4.03",
+      "profile_tier": "lite"
+    },
+    "D6.02": {
+      "depends_on": "D4.05, D5.04",
+      "profile_tier": "standard"
+    },
+    "D6.03": {
+      "depends_on": "D4.06, D4.09",
+      "profile_tier": "exhaustive"
+    },
+    "D6.04": {
+      "depends_on": "D4.06, D4.08",
+      "profile_tier": "exhaustive"
+    },
+    "D6.05": {
+      "depends_on": "D2.05, D4.06",
+      "profile_tier": "exhaustive"
+    },
+    "D6.06": {
+      "depends_on": "D3.02, D4.06",
+      "profile_tier": "exhaustive"
+    },
+    "D6.07": {
+      "depends_on": "D1.07, D3.02, D4.05",
+      "profile_tier": "exhaustive"
+    },
+    "D6.08": {
+      "depends_on": "D4.06, D5.01",
+      "profile_tier": "exhaustive"
+    },
+    "D7.01": {
+      "depends_on": "D2.02, D4.03, D6.01",
+      "profile_tier": "lite"
+    },
+    "D7.02": {
+      "depends_on": "D7.01, D2.04, D5.03",
+      "profile_tier": "standard"
+    },
+    "D7.03": {
+      "depends_on": "D6.01, D4.09",
+      "profile_tier": "standard"
+    },
+    "D7.04": {
+      "depends_on": "D2.04, D4.03, D6.01",
+      "profile_tier": "exhaustive"
+    },
+    "D7.05": {
+      "depends_on": "D4.04, D6.01, D7.01",
+      "profile_tier": "lite"
+    },
+    "D7.06": {
+      "depends_on": "D7.03, D7.04",
+      "profile_tier": "exhaustive"
+    },
+    "D7.07": {
+      "depends_on": "D7.01, D6.04",
+      "profile_tier": "exhaustive"
+    },
+    "D7.08": {
+      "depends_on": "D7.04",
+      "profile_tier": "exhaustive"
+    },
+    "D8.01": {
+      "depends_on": "D7.05",
+      "profile_tier": "standard"
+    },
+    "D8.02": {
+      "depends_on": "D7.05",
+      "profile_tier": "lite"
+    }
+  },
+  "workspace_config": {
+    "architecture_document_id": "D0.02",
+    "bootstrap_doc_ids": [
+      "D0.01",
+      "D0.02"
+    ],
+    "id_index_document_ids": [
+      "D7.04"
+    ],
+    "profile": "standard",
+    "profile_policy": {
+      "exhaustive": "Comprehensive depth; includes lite, standard and exhaustive-tier documents.",
+      "lite": "Minimum coherent implementation-planning baseline; only documents explicitly tagged lite.",
+      "standard": "Normal depth; includes lite and standard-tier documents."
+    },
+    "profile_ranks": {
+      "exhaustive": 3,
+      "lite": 1,
+      "standard": 2
+    },
+    "vision_document_id": "D0.01"
+  }
+}

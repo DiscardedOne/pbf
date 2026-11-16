@@ -1,0 +1,586 @@
+{
+  "schema_version": 1,
+  "baseline_release": "2.3.3",
+  "baseline_archive_sha256": "2f2d4e7f1c27161415abdf3839a6dc61436fab3d0d5f2c39d191b8520a46bcb9",
+  "baseline_test_module_sha256": "e201f72106ab54095ae7dfe557485a882c8faefeac1d80b77b1826ecace4f6ad",
+  "test_count": 94,
+  "ported_test_module": "framework-dev/tests/test_compatibility_regressions.py",
+  "method_identities": {
+    "ValidationCoverageTests": [
+      "test_baseline_strict_validation_passes",
+      "test_checker_scans_framework_markdown_for_broken_links",
+      "test_checker_scans_root_readme_for_broken_links",
+      "test_checker_scans_framework_mermaid",
+      "test_checker_resolves_reference_style_links",
+      "test_checker_validates_heading_anchors",
+      "test_checker_finds_stale_document_ids_in_diagram_index",
+      "test_catalog_manifest_path_mismatch_is_error",
+      "test_catalog_dependency_mismatch_is_error",
+      "test_catalog_title_mismatch_is_error",
+      "test_empty_catalog_title_is_error",
+      "test_catalog_distinguishes_file_and_folder_paths",
+      "test_lite_document_cannot_depend_on_deeper_profile_document",
+      "test_phase_gate_ignores_conditional_and_out_of_profile_documents",
+      "test_workspace_custom_phase_and_document_paths_are_dynamic",
+      "test_configured_traceability_index_path_follows_manifest_move",
+      "test_catalog_dependencies_do_not_reintroduce_structural_edges",
+      "test_manifest_title_mismatch_is_error",
+      "test_manifest_phase_mismatch_is_error",
+      "test_manifest_version_and_date_mismatches_are_errors",
+      "test_dependency_mismatch_is_error_not_warning",
+      "test_path_traversal_is_rejected",
+      "test_duplicate_paths_are_rejected",
+      "test_child_document_must_stay_inside_repeatable_family_path",
+      "test_markdown_link_cannot_escape_workspace",
+      "test_phase_10_question_blocker_is_respected",
+      "test_excluded_existing_file_still_gets_metadata_checked",
+      "test_profile_rank_order_must_be_valid",
+      "test_custom_multidigit_phase_is_registered_and_reported",
+      "test_unregistered_phase_is_error"
+    ],
+    "ApplicabilityAndProfileTests": [
+      "test_conditional_doc_cannot_be_scaffolded_until_activated",
+      "test_applicability_command_requires_reason_and_updates_manifest",
+      "test_applicability_activation_scaffolds_synchronized_metadata",
+      "test_deferred_and_excluded_are_not_counted_in_progress",
+      "test_profile_tiers_control_phase_scaffolding",
+      "test_profile_command_persists_selection"
+    ],
+    "DependencySeparationTests": [
+      "test_d002_is_not_encoded_as_content_dependency_for_every_doc",
+      "test_architecture_impact_separates_content_and_structural_candidates",
+      "test_graph_is_content_dependency_only",
+      "test_override_requires_reason"
+    ],
+    "ApprovalLintIndexTests": [
+      "test_approval_fingerprint_binds_all_manifest_metadata_fields",
+      "test_approval_fingerprint_binds_all_front_matter_metadata_fields",
+      "test_approve_records_evidence_hash_and_check_passes",
+      "test_approve_requires_in_review_and_evidence",
+      "test_approve_refuses_hollow_document",
+      "test_manual_approval_without_record_is_an_error",
+      "test_editing_approved_content_is_detected_and_revision_cycle_bumps_version",
+      "test_approval_fingerprint_binds_summary_metadata_and_uses_full_sha256",
+      "test_approval_fingerprint_binds_title_metadata_too",
+      "test_last_updated_change_does_not_invalidate_approval_when_synced",
+      "test_crlf_line_endings_do_not_invalidate_approval_fingerprint",
+      "test_legacy_body_only_approval_hash_requires_reapproval",
+      "test_approved_document_is_invalid_when_active_upstream_is_no_longer_approved",
+      "test_override_cannot_bypass_an_approved_architecture_with_unapproved_input",
+      "test_scaffold_blocks_when_approved_architecture_input_fingerprint_is_stale",
+      "test_architecture_override_cannot_bypass_stale_approval_fingerprint",
+      "test_downstream_approval_blocks_on_stale_approved_ancestor",
+      "test_scaffold_rejects_approved_ancestor_status_or_version_front_matter_drift",
+      "test_repeatable_family_can_expand_beyond_42_catalog_records",
+      "test_starter_profile_is_consistently_standard_and_counts_are_not_a_cap",
+      "test_set_status_blocks_direct_approval_and_illegal_transitions",
+      "test_gate_message_names_the_real_blocker",
+      "test_profiles_are_meaningfully_different",
+      "test_index_is_generated_and_staleness_detected",
+      "test_index_shows_summaries_and_defined_ids",
+      "test_starter_workspace_is_clean_of_framework_history",
+      "test_framework_dev_folder_is_ignored_by_project_checks",
+      "test_scaffold_keeps_manifest_date_in_sync_with_new_files",
+      "test_lint_flags_bare_tbd_and_empty_fields_in_review"
+    ],
+    "ReleaseReadinessTests": [
+      "test_explicit_fill_markers_trigger_tpl001_but_natural_brackets_do_not",
+      "test_each_shipped_template_has_explicit_marker_and_fails_approval_lint",
+      "test_inline_code_and_escaped_fill_marker_are_ignored",
+      "test_inline_ignore_line_suppresses_only_tpl_marker_with_reason",
+      "test_ignore_next_line_uses_immediate_physical_line",
+      "test_bad_or_stale_lint_suppressions_are_reported",
+      "test_every_lint_rule_has_a_documented_catalog_entry",
+      "test_guide_version_and_command_inventory_match_the_cli",
+      "test_guide_starter_catalog_inventory_matches_manifest",
+      "test_v232_approval_fingerprint_golden_is_unchanged",
+      "test_manifest_tiers_and_profile_config_match_v232_snapshot",
+      "test_check_readiness_reports_unedited_draft_without_changing_exit_code",
+      "test_readiness_scopes_to_active_in_profile_drafting_statuses",
+      "test_dedicated_signoff_template_and_traceability_fields_are_mapped",
+      "test_requirement_traceability_field_format_uses_existing_fld001",
+      "test_profile_traceability_gate_timing_reserves_final_audits_for_g8",
+      "test_live_policy_docs_do_not_use_legacy_placeholder_convention",
+      "test_lint_rules_suppression_example_is_self_consistent",
+      "test_readme_is_owner_entry_point_without_duplicate_quickstart_or_approval_doc",
+      "test_status_transition_reason_is_persisted_and_approval_is_logged",
+      "test_mutation_events_cover_scaffold_applicability_maturity_profile_and_override",
+      "test_check_rejects_invalid_jsonl_event_record",
+      "test_check_warns_when_last_logged_status_differs_from_manifest",
+      "test_weak_approval_evidence_is_warned_but_not_misrepresented_as_authenticated",
+      "test_approval_is_not_recorded_when_front_matter_sync_fails"
+    ]
+  },
+  "mappings": [
+    {
+      "baseline_test": "ValidationCoverageTests.test_baseline_strict_validation_passes",
+      "ported_test": "ValidationCoverageTests.test_baseline_strict_validation_passes",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_checker_scans_framework_markdown_for_broken_links",
+      "ported_test": "ValidationCoverageTests.test_checker_scans_framework_markdown_for_broken_links",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_checker_scans_root_readme_for_broken_links",
+      "ported_test": "ValidationCoverageTests.test_checker_scans_root_readme_for_broken_links",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_checker_scans_framework_mermaid",
+      "ported_test": "ValidationCoverageTests.test_checker_scans_framework_mermaid",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_checker_resolves_reference_style_links",
+      "ported_test": "ValidationCoverageTests.test_checker_resolves_reference_style_links",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_checker_validates_heading_anchors",
+      "ported_test": "ValidationCoverageTests.test_checker_validates_heading_anchors",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_checker_finds_stale_document_ids_in_diagram_index",
+      "ported_test": "ValidationCoverageTests.test_checker_finds_stale_document_ids_in_diagram_index",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_catalog_manifest_path_mismatch_is_error",
+      "ported_test": "ValidationCoverageTests.test_catalog_manifest_path_mismatch_is_error",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_catalog_dependency_mismatch_is_error",
+      "ported_test": "ValidationCoverageTests.test_catalog_dependency_mismatch_is_error",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_catalog_title_mismatch_is_error",
+      "ported_test": "ValidationCoverageTests.test_catalog_title_mismatch_is_error",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_empty_catalog_title_is_error",
+      "ported_test": "ValidationCoverageTests.test_empty_catalog_title_is_error",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_catalog_distinguishes_file_and_folder_paths",
+      "ported_test": "ValidationCoverageTests.test_catalog_distinguishes_file_and_folder_paths",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_lite_document_cannot_depend_on_deeper_profile_document",
+      "ported_test": "ValidationCoverageTests.test_lite_document_cannot_depend_on_deeper_profile_document",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_phase_gate_ignores_conditional_and_out_of_profile_documents",
+      "ported_test": "ValidationCoverageTests.test_phase_gate_ignores_conditional_and_out_of_profile_documents",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_workspace_custom_phase_and_document_paths_are_dynamic",
+      "ported_test": "ValidationCoverageTests.test_workspace_custom_phase_and_document_paths_are_dynamic",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_configured_traceability_index_path_follows_manifest_move",
+      "ported_test": "ValidationCoverageTests.test_configured_traceability_index_path_follows_manifest_move",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_catalog_dependencies_do_not_reintroduce_structural_edges",
+      "ported_test": "ValidationCoverageTests.test_catalog_dependencies_do_not_reintroduce_structural_edges",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_manifest_title_mismatch_is_error",
+      "ported_test": "ValidationCoverageTests.test_manifest_title_mismatch_is_error",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_manifest_phase_mismatch_is_error",
+      "ported_test": "ValidationCoverageTests.test_manifest_phase_mismatch_is_error",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_manifest_version_and_date_mismatches_are_errors",
+      "ported_test": "ValidationCoverageTests.test_manifest_version_and_date_mismatches_are_errors",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_dependency_mismatch_is_error_not_warning",
+      "ported_test": "ValidationCoverageTests.test_dependency_mismatch_is_error_not_warning",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_path_traversal_is_rejected",
+      "ported_test": "ValidationCoverageTests.test_path_traversal_is_rejected",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_duplicate_paths_are_rejected",
+      "ported_test": "ValidationCoverageTests.test_duplicate_paths_are_rejected",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_child_document_must_stay_inside_repeatable_family_path",
+      "ported_test": "ValidationCoverageTests.test_child_document_must_stay_inside_repeatable_family_path",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_markdown_link_cannot_escape_workspace",
+      "ported_test": "ValidationCoverageTests.test_markdown_link_cannot_escape_workspace",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_phase_10_question_blocker_is_respected",
+      "ported_test": "ValidationCoverageTests.test_phase_10_question_blocker_is_respected",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_excluded_existing_file_still_gets_metadata_checked",
+      "ported_test": "ValidationCoverageTests.test_excluded_existing_file_still_gets_metadata_checked",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_profile_rank_order_must_be_valid",
+      "ported_test": "ValidationCoverageTests.test_profile_rank_order_must_be_valid",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_custom_multidigit_phase_is_registered_and_reported",
+      "ported_test": "ValidationCoverageTests.test_custom_multidigit_phase_is_registered_and_reported",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ValidationCoverageTests.test_unregistered_phase_is_error",
+      "ported_test": "ValidationCoverageTests.test_unregistered_phase_is_error",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApplicabilityAndProfileTests.test_conditional_doc_cannot_be_scaffolded_until_activated",
+      "ported_test": "ApplicabilityAndProfileTests.test_conditional_doc_cannot_be_scaffolded_until_activated",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApplicabilityAndProfileTests.test_applicability_command_requires_reason_and_updates_manifest",
+      "ported_test": "ApplicabilityAndProfileTests.test_applicability_command_requires_reason_and_updates_manifest",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApplicabilityAndProfileTests.test_applicability_activation_scaffolds_synchronized_metadata",
+      "ported_test": "ApplicabilityAndProfileTests.test_applicability_activation_scaffolds_synchronized_metadata",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApplicabilityAndProfileTests.test_deferred_and_excluded_are_not_counted_in_progress",
+      "ported_test": "ApplicabilityAndProfileTests.test_deferred_and_excluded_are_not_counted_in_progress",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApplicabilityAndProfileTests.test_profile_tiers_control_phase_scaffolding",
+      "ported_test": "ApplicabilityAndProfileTests.test_profile_tiers_control_phase_scaffolding",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApplicabilityAndProfileTests.test_profile_command_persists_selection",
+      "ported_test": "ApplicabilityAndProfileTests.test_profile_command_persists_selection",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "DependencySeparationTests.test_d002_is_not_encoded_as_content_dependency_for_every_doc",
+      "ported_test": "DependencySeparationTests.test_d002_is_not_encoded_as_content_dependency_for_every_doc",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "DependencySeparationTests.test_architecture_impact_separates_content_and_structural_candidates",
+      "ported_test": "DependencySeparationTests.test_architecture_impact_separates_content_and_structural_candidates",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "DependencySeparationTests.test_graph_is_content_dependency_only",
+      "ported_test": "DependencySeparationTests.test_graph_is_content_dependency_only",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "DependencySeparationTests.test_override_requires_reason",
+      "ported_test": "DependencySeparationTests.test_override_requires_reason",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_approval_fingerprint_binds_all_manifest_metadata_fields",
+      "ported_test": "ApprovalLintIndexTests.test_approval_fingerprint_binds_all_manifest_metadata_fields",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_approval_fingerprint_binds_all_front_matter_metadata_fields",
+      "ported_test": "ApprovalLintIndexTests.test_approval_fingerprint_binds_all_front_matter_metadata_fields",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_approve_records_evidence_hash_and_check_passes",
+      "ported_test": "ApprovalLintIndexTests.test_approve_records_evidence_hash_and_check_passes",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_approve_requires_in_review_and_evidence",
+      "ported_test": "ApprovalLintIndexTests.test_approve_requires_in_review_and_evidence",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_approve_refuses_hollow_document",
+      "ported_test": "ApprovalLintIndexTests.test_approve_refuses_hollow_document",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_manual_approval_without_record_is_an_error",
+      "ported_test": "ApprovalLintIndexTests.test_manual_approval_without_record_is_an_error",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_editing_approved_content_is_detected_and_revision_cycle_bumps_version",
+      "ported_test": "ApprovalLintIndexTests.test_editing_approved_content_is_detected_and_revision_cycle_bumps_version",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_approval_fingerprint_binds_summary_metadata_and_uses_full_sha256",
+      "ported_test": "ApprovalLintIndexTests.test_approval_fingerprint_binds_summary_metadata_and_uses_full_sha256",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_approval_fingerprint_binds_title_metadata_too",
+      "ported_test": "ApprovalLintIndexTests.test_approval_fingerprint_binds_title_metadata_too",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_last_updated_change_does_not_invalidate_approval_when_synced",
+      "ported_test": "ApprovalLintIndexTests.test_last_updated_change_does_not_invalidate_approval_when_synced",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_crlf_line_endings_do_not_invalidate_approval_fingerprint",
+      "ported_test": "ApprovalLintIndexTests.test_crlf_line_endings_do_not_invalidate_approval_fingerprint",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_legacy_body_only_approval_hash_requires_reapproval",
+      "ported_test": "ApprovalLintIndexTests.test_legacy_body_only_approval_hash_requires_reapproval",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_approved_document_is_invalid_when_active_upstream_is_no_longer_approved",
+      "ported_test": "ApprovalLintIndexTests.test_approved_document_is_invalid_when_active_upstream_is_no_longer_approved",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_override_cannot_bypass_an_approved_architecture_with_unapproved_input",
+      "ported_test": "ApprovalLintIndexTests.test_override_cannot_bypass_an_approved_architecture_with_unapproved_input",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_scaffold_blocks_when_approved_architecture_input_fingerprint_is_stale",
+      "ported_test": "ApprovalLintIndexTests.test_scaffold_blocks_when_approved_architecture_input_fingerprint_is_stale",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_architecture_override_cannot_bypass_stale_approval_fingerprint",
+      "ported_test": "ApprovalLintIndexTests.test_architecture_override_cannot_bypass_stale_approval_fingerprint",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_downstream_approval_blocks_on_stale_approved_ancestor",
+      "ported_test": "ApprovalLintIndexTests.test_downstream_approval_blocks_on_stale_approved_ancestor",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_scaffold_rejects_approved_ancestor_status_or_version_front_matter_drift",
+      "ported_test": "ApprovalLintIndexTests.test_scaffold_rejects_approved_ancestor_status_or_version_front_matter_drift",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_repeatable_family_can_expand_beyond_42_catalog_records",
+      "ported_test": "ApprovalLintIndexTests.test_repeatable_family_can_expand_beyond_42_catalog_records",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_starter_profile_is_consistently_standard_and_counts_are_not_a_cap",
+      "ported_test": "ApprovalLintIndexTests.test_starter_profile_is_consistently_standard_and_counts_are_not_a_cap",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_set_status_blocks_direct_approval_and_illegal_transitions",
+      "ported_test": "ApprovalLintIndexTests.test_set_status_blocks_direct_approval_and_illegal_transitions",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_gate_message_names_the_real_blocker",
+      "ported_test": "ApprovalLintIndexTests.test_gate_message_names_the_real_blocker",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_profiles_are_meaningfully_different",
+      "ported_test": "ApprovalLintIndexTests.test_profiles_are_meaningfully_different",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_index_is_generated_and_staleness_detected",
+      "ported_test": "ApprovalLintIndexTests.test_index_is_generated_and_staleness_detected",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_index_shows_summaries_and_defined_ids",
+      "ported_test": "ApprovalLintIndexTests.test_index_shows_summaries_and_defined_ids",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_starter_workspace_is_clean_of_framework_history",
+      "ported_test": "ApprovalLintIndexTests.test_starter_workspace_is_clean_of_framework_history",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_framework_dev_folder_is_ignored_by_project_checks",
+      "ported_test": "ApprovalLintIndexTests.test_framework_dev_folder_is_ignored_by_project_checks",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_scaffold_keeps_manifest_date_in_sync_with_new_files",
+      "ported_test": "ApprovalLintIndexTests.test_scaffold_keeps_manifest_date_in_sync_with_new_files",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ApprovalLintIndexTests.test_lint_flags_bare_tbd_and_empty_fields_in_review",
+      "ported_test": "ApprovalLintIndexTests.test_lint_flags_bare_tbd_and_empty_fields_in_review",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_explicit_fill_markers_trigger_tpl001_but_natural_brackets_do_not",
+      "ported_test": "ReleaseReadinessTests.test_explicit_fill_markers_trigger_tpl001_but_natural_brackets_do_not",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_each_shipped_template_has_explicit_marker_and_fails_approval_lint",
+      "ported_test": "ReleaseReadinessTests.test_each_shipped_template_has_explicit_marker_and_fails_approval_lint",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_inline_code_and_escaped_fill_marker_are_ignored",
+      "ported_test": "ReleaseReadinessTests.test_inline_code_and_escaped_fill_marker_are_ignored",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_inline_ignore_line_suppresses_only_tpl_marker_with_reason",
+      "ported_test": "ReleaseReadinessTests.test_inline_ignore_line_suppresses_only_tpl_marker_with_reason",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_ignore_next_line_uses_immediate_physical_line",
+      "ported_test": "ReleaseReadinessTests.test_ignore_next_line_uses_immediate_physical_line",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_bad_or_stale_lint_suppressions_are_reported",
+      "ported_test": "ReleaseReadinessTests.test_bad_or_stale_lint_suppressions_are_reported",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_every_lint_rule_has_a_documented_catalog_entry",
+      "ported_test": "ReleaseReadinessTests.test_every_lint_rule_has_a_documented_catalog_entry",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_guide_version_and_command_inventory_match_the_cli",
+      "ported_test": "ReleaseReadinessTests.test_guide_version_and_command_inventory_match_the_cli",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_guide_starter_catalog_inventory_matches_manifest",
+      "ported_test": "ReleaseReadinessTests.test_guide_starter_catalog_inventory_matches_manifest",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_v232_approval_fingerprint_golden_is_unchanged",
+      "ported_test": "ReleaseReadinessTests.test_v232_approval_fingerprint_golden_is_unchanged",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_manifest_tiers_and_profile_config_match_v232_snapshot",
+      "ported_test": "ReleaseReadinessTests.test_manifest_tiers_and_profile_config_match_v232_snapshot",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_check_readiness_reports_unedited_draft_without_changing_exit_code",
+      "ported_test": "ReleaseReadinessTests.test_check_readiness_reports_unedited_draft_without_changing_exit_code",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_readiness_scopes_to_active_in_profile_drafting_statuses",
+      "ported_test": "ReleaseReadinessTests.test_readiness_scopes_to_active_in_profile_drafting_statuses",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_dedicated_signoff_template_and_traceability_fields_are_mapped",
+      "ported_test": "ReleaseReadinessTests.test_dedicated_signoff_template_and_traceability_fields_are_mapped",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_requirement_traceability_field_format_uses_existing_fld001",
+      "ported_test": "ReleaseReadinessTests.test_requirement_traceability_field_format_uses_existing_fld001",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_profile_traceability_gate_timing_reserves_final_audits_for_g8",
+      "ported_test": "ReleaseReadinessTests.test_profile_traceability_gate_timing_reserves_final_audits_for_g8",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_live_policy_docs_do_not_use_legacy_placeholder_convention",
+      "ported_test": "ReleaseReadinessTests.test_live_policy_docs_do_not_use_legacy_placeholder_convention",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_lint_rules_suppression_example_is_self_consistent",
+      "ported_test": "ReleaseReadinessTests.test_lint_rules_suppression_example_is_self_consistent",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_readme_is_owner_entry_point_without_duplicate_quickstart_or_approval_doc",
+      "ported_test": "ReleaseReadinessTests.test_readme_is_owner_entry_point_without_duplicate_quickstart_or_approval_doc",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_status_transition_reason_is_persisted_and_approval_is_logged",
+      "ported_test": "ReleaseReadinessTests.test_status_transition_reason_is_persisted_and_approval_is_logged",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_mutation_events_cover_scaffold_applicability_maturity_profile_and_override",
+      "ported_test": "ReleaseReadinessTests.test_mutation_events_cover_scaffold_applicability_maturity_profile_and_override",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_check_rejects_invalid_jsonl_event_record",
+      "ported_test": "ReleaseReadinessTests.test_check_rejects_invalid_jsonl_event_record",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_check_warns_when_last_logged_status_differs_from_manifest",
+      "ported_test": "ReleaseReadinessTests.test_check_warns_when_last_logged_status_differs_from_manifest",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_weak_approval_evidence_is_warned_but_not_misrepresented_as_authenticated",
+      "ported_test": "ReleaseReadinessTests.test_weak_approval_evidence_is_warned_but_not_misrepresented_as_authenticated",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    },
+    {
+      "baseline_test": "ReleaseReadinessTests.test_approval_is_not_recorded_when_front_matter_sync_fails",
+      "ported_test": "ReleaseReadinessTests.test_approval_is_not_recorded_when_front_matter_sync_fails",
+      "equivalence_note": "Original behavioural assertion retained; v2.3.3 filesystem paths and command dispatch adapted to the canonical v3 workspace layout."
+    }
+  ]
+}

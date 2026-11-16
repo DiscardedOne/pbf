@@ -1,0 +1,147 @@
+{
+  "defaults_schema_version": 1,
+  "profile_ranks": {
+    "lite": 1,
+    "standard": 2,
+    "exhaustive": 3
+  },
+  "vision_document_id": "D0.01",
+  "architecture_document_id": "D0.02",
+  "bootstrap_doc_ids": [
+    "D0.01",
+    "D0.02"
+  ],
+  "structural_impact_policy": "The accepted D0.02 governs documentation structure. Structural impact is a review-candidate relationship distinct from content dependency edges.",
+  "profile_policy": {
+    "lite": "Minimum coherent implementation-planning baseline; only documents explicitly tagged lite.",
+    "standard": "Normal depth; includes lite and standard-tier documents.",
+    "exhaustive": "Comprehensive depth; includes lite, standard and exhaustive-tier documents."
+  },
+  "id_index_document_ids": [
+    "D7.04"
+  ],
+  "semantic_sources": {
+    "include_roots": [
+      "docs",
+      "_control/registry"
+    ],
+    "exclude_paths": [
+      "docs/README.md",
+      "_control/registry/MANIFEST.md",
+      "_control/registry/INDEX.md",
+      "_control/registry/APPROVALS.md",
+      "_control/registry/CHANGELOG.md"
+    ],
+    "exclude_roots": [
+      "_framework",
+      "_control/logs"
+    ]
+  },
+  "workspace_structure": {
+    "required_directories": [
+      "docs",
+      "_framework",
+      "_framework/defaults",
+      "_framework/templates",
+      "_framework/tools",
+      "_control",
+      "_control/registry",
+      "_control/logs"
+    ],
+    "optional_directories": [
+      "docs/00-overview",
+      "docs/01-discovery",
+      "docs/02-product",
+      "docs/03-domain",
+      "docs/04-architecture",
+      "docs/04-architecture/adr",
+      "docs/05-design",
+      "docs/06-quality-operations",
+      "docs/07-delivery",
+      "docs/08-acceptance",
+      "docs/99-appendix",
+      "docs/_assets",
+      "docs/_assets/images",
+      "docs/_assets/diagrams",
+      "docs/_assets/attachments",
+      "docs/_assets/specs",
+      "_control/logs/sessions",
+      "_control/logs/interviews",
+      "_control/logs/phase-reports",
+      "_control/logs/overrides"
+    ],
+    "required_files": [
+      "README.md",
+      "AGENTS.md",
+      "bp.py",
+      ".gitignore",
+      ".gitattributes",
+      "docs/README.md",
+      "_framework/FRAMEWORK-MANIFEST.json",
+      "_framework/GUIDE.md",
+      "_framework/WORKSPACE-CONFIG.md",
+      "_framework/OPERATING-MANUAL.md",
+      "_framework/WORKFLOW-PLAN.md",
+      "_framework/DOC-CATALOG.md",
+      "_framework/QUALITY-GATES.md",
+      "_framework/PROTOCOLS.md",
+      "_framework/CONVENTIONS.md",
+      "_framework/LINT-RULES.md",
+      "_framework/QUESTION-BANK.md",
+      "_framework/DIAGRAMS.md",
+      "_framework/CONVERSATIONAL-WORKFLOW.md",
+      "_framework/ADAPTIVE-DOCUMENT-ARCHITECTURE.md",
+      "_framework/defaults/workspace-defaults.json",
+      "_framework/defaults/workspace-policy-defaults.md",
+      "_framework/tools/blueprint.py",
+      "_framework/tools/workspace_paths.py",
+      "_control/WORKSPACE.json",
+      "_control/PHASES.md",
+      "_control/STATE.md",
+      "_control/PROJECT-RULES.md",
+      "_control/registry/MANIFEST.md",
+      "_control/registry/INDEX.md",
+      "_control/registry/APPROVALS.md",
+      "_control/registry/DECISIONS.md",
+      "_control/registry/ASSUMPTIONS.md",
+      "_control/registry/QUESTIONS.md",
+      "_control/registry/RISKS.md",
+      "_control/registry/GLOSSARY.md",
+      "_control/registry/CHANGELOG.md",
+      "_control/logs/status-transitions.jsonl"
+    ]
+  },
+  "asset_categories": {
+    "images": [
+      "png",
+      "jpg",
+      "jpeg",
+      "webp",
+      "gif",
+      "svg"
+    ],
+    "diagrams": [
+      "mmd",
+      "drawio",
+      "svg",
+      "png",
+      "pdf"
+    ],
+    "attachments": [
+      "pdf",
+      "txt",
+      "csv",
+      "docx",
+      "xlsx",
+      "pptx"
+    ],
+    "specs": [
+      "yaml",
+      "yml",
+      "json",
+      "graphql",
+      "proto",
+      "sql"
+    ]
+  }
+}

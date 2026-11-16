@@ -1,0 +1,31 @@
+# Python/runtime artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Framework build output and temporary artifacts
+dist/
+*.zip.tmp
+
+# Local environment and secret material
+.env
+.env.*
+!.env.example
+!.env.template
+# Conservative extension rules also ignore non-secret assets with these suffixes; force-add only after review.
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+/.secrets/
+/secrets/
+/credentials/

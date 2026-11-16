@@ -1,0 +1,17 @@
+{
+  "source_release": "2.3.2",
+  "expected_sha256": "40a27ae1e290c23bee445e2ca55cd13d6f9a4f5f14cc6414675190b0776280fa",
+  "document_text": "---\ndoc_id: D1.01\ntitle: Vision\nphase: 1\nstatus: approved\nmaturity: outline\nversion: 1.0\nlast_updated: 2026-10-22\ndepends_on: [D0.01]\nsummary: Original summary\napplicability: active\napplicability_rationale: Not conditional\nprofile_tier: standard\n---\n\n# Body\nStable body text.\n",
+  "manifest_document": {
+    "id": "D1.01",
+    "path": "01-discovery/vision.md",
+    "title": "Vision",
+    "phase": "1",
+    "depends": [
+      "D0.01"
+    ],
+    "applicability": "active",
+    "applicability_rationale": "Not conditional",
+    "profile_tier": "standard"
+  }
+}

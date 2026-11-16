@@ -1,0 +1,74 @@
+# {{PROJECT_NAME}} — Project Blueprint Workspace
+
+This is the documentation and planning workspace for **{{PROJECT_NAME}}**. It is not the application's source-code repository. It provides a structured place to discover the project, record decisions, define requirements, shape architecture and prepare reliable implementation guidance.
+
+## Quick start
+
+1. Open this folder as the project documentation workspace.
+2. Read [`AGENTS.md`](AGENTS.md) and add project-specific constraints to [`_control/PROJECT-RULES.md`](_control/PROJECT-RULES.md).
+3. Start your AI agent with the first-session prompt below. If your agent does not automatically load `AGENTS.md`, explicitly instruct it to read the file first.
+4. Begin with a conversation about the project vision. Do not generate the entire document catalog at once.
+5. Review and explicitly accept the proposed adaptive document architecture before broad scaffolding or treating proposals as project decisions.
+
+Use Python **3.11 or newer** for the workspace command launcher. The launcher checks the interpreter before running. Do not assume that `python` or `python3` points to the right version:
+
+- Windows: `py -3.11 bp.py --version` (or another installed 3.11+ interpreter).
+- Linux/WSL: `python3.11 bp.py --version`, or `python3 bp.py --version` after confirming `python3 --version` is 3.11+.
+- Other environments: use the host's interpreter selector or executable path for Python 3.11+.
+
+Common checks from the workspace root:
+
+```powershell
+py -3.11 .\bp.py check --strict
+py -3.11 .\bp.py status --write
+py -3.11 .\bp.py index --check
+```
+
+```bash
+python3.11 bp.py check --strict
+python3.11 bp.py status --write
+python3.11 bp.py index --check
+```
+
+The `new` command that created this folder did **not** run `git init`. Repository initialization is an explicit owner choice. To place this workspace under Git, review the destination and then run `git init` yourself from this folder. The framework does not initialize Git or publish this workspace automatically.
+
+## License and ownership
+
+The root [`LICENSE`](LICENSE) applies to PBF-provided framework components. It does not automatically license project-specific documents, records, data, diagrams, application code or third-party material that you or other contributors add. Read [`PBF-LICENSE-SCOPE.md`](PBF-LICENSE-SCOPE.md) before publishing or redistributing this workspace, and choose separate licensing for your project material as appropriate.
+
+## First-session prompt
+
+Copy this prompt into an agent that has access to this folder:
+
+> Read `AGENTS.md` and initialize yourself with this workspace. Read `_control/PROJECT-RULES.md`, `_control/STATE.md` and `_control/registry/INDEX.md`; verify the actual files before relying on prior conversation context. I want to document the following project: [describe the idea]. Begin conversational discovery, identify what is already known and what remains uncertain, and help me capture the initial vision. Do not bulk-scaffold the catalog or start with a large questionnaire. Keep confirmed facts, proposals, assumptions and open questions distinct. Ask focused questions only when an answer materially changes the project.
+
+## Workspace map
+
+| Location | Purpose |
+|---|---|
+| [`docs/`](docs/README.md) | Project-specific documents and supporting artifacts. |
+| [`_framework/`](_framework/GUIDE.md) | Reusable methodology, rules, templates, defaults and command reference. |
+| [`_control/`](_control/STATE.md) | Project configuration, state, phases, approvals, registers and session history. |
+| [`AGENTS.md`](AGENTS.md) | Compact, framework-managed agent operating contract. |
+| [`bp.py`](bp.py) | Cross-platform workspace command launcher. |
+
+The project document inventory is [`_control/registry/MANIFEST.md`](_control/registry/MANIFEST.md), and generated navigation is [`_control/registry/INDEX.md`](_control/registry/INDEX.md). The stakeholder registers are [`DECISIONS.md`](_control/registry/DECISIONS.md), [`ASSUMPTIONS.md`](_control/registry/ASSUMPTIONS.md), [`QUESTIONS.md`](_control/registry/QUESTIONS.md), [`RISKS.md`](_control/registry/RISKS.md) and [`GLOSSARY.md`](_control/registry/GLOSSARY.md).
+
+## Working principles
+
+- The document architecture is adaptive. Choose the smallest set of documents that gives the project adequate coverage; expand or reorganize it when evidence justifies doing so.
+- Catalog profile counts are not limits on project document count.
+- The owner explicitly accepts decisions and approves individual document versions.
+- A clean strict check is necessary for structural confidence but does not establish semantic completeness or architectural correctness.
+- The workspace is the durable project record. End each substantive session with an accurate state checkpoint and handoff.
+
+## Important references
+
+- [`_framework/GUIDE.md`](_framework/GUIDE.md) — framework overview and operating reference.
+- [`_framework/WINDOWS-USAGE.md`](_framework/WINDOWS-USAGE.md) — Windows PowerShell, interpreter selection and platform-specific usage notes.
+- [`_framework/OPERATING-MANUAL.md`](_framework/OPERATING-MANUAL.md) — detailed operating workflow.
+- [`_framework/ADAPTIVE-DOCUMENT-ARCHITECTURE.md`](_framework/ADAPTIVE-DOCUMENT-ARCHITECTURE.md) — adaptive document-set design.
+- [`_framework/QUALITY-GATES.md`](_framework/QUALITY-GATES.md) — quality and phase-gate expectations.
+- [`_control/PHASES.md`](_control/PHASES.md) — project-specific phase plan.
+
+For workspace CLI details, use `bp.py --help` and the command's own help. Framework-maintenance commands (`verify`, `build` and `new`) exist only in the framework source distribution, not in this generated workspace.
